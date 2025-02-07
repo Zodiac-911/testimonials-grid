@@ -17,21 +17,17 @@ body {
   margin-top: 40px;
   display: grid;
   gap: 40px;
-
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto auto auto;
   grid-column: 300px;
   grid-row: 200px;
+  scale: 0.7;
 }
 img {
   border-radius: 50%;
   height: 40px;
 }
-.div1,
-.div2,
-.div3,
-.div4,
-.div5 {
+.div {
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -43,32 +39,36 @@ img {
   display: flex;
   gap: 20px;
 }
-.div1 {
+.one {
   background-color: hsl(263, 55%, 52%);
   grid-column: 1 / 3;
   background-image: url(images/bg-pattern-quotation.svg);
   background-repeat: no-repeat;
   background-position: 250px 0;
+  z-index: 0;
 }
-.div2 {
+.two {
   background-color: hsl(217, 19%, 35%);
   grid-column: 3 / 3;
+  z-index: 1;
 }
-.div3 {
+.three {
   background-color: white;
   color: hsl(219, 29%, 14%);
   grid-row: 3 / 1;
   grid-column: 4 / 4;
-  order: 1;
+  z-index: 2;
   width: 300px;
 }
-.div4 {
+.four {
   background-color: white;
   color: hsl(219, 29%, 14%);
+  z-index: 0;
 }
-.div5 {
+.five {
   background-color: hsl(219, 29%, 14%);
   grid-column: 2 / 4;
+  z-index: 1;
 }
 .p1 {
   font-size: 27px;
@@ -77,61 +77,59 @@ img {
 .p2 {
   font-size: 18px;
 }
-.div1 .under-name {
+.one .under-name {
   color: hsl(263, 89%, 82%);
 }
-.div1 .under-name {
+.two .under-name {
+  color: hsl(216, 50%, 85%);
+}
+.three .under-name {
+  color: hsla(217, 30%, 14%, 0.568);
+}
+.four .under-name {
+  color: hsl(217, 19%, 35%);
+}
+.five .under-name {
+  color: rgba(255, 255, 255, 0.555);
+}
+.one .p2 {
   color: hsl(263, 89%, 82%);
 }
-.div2 .under-name {
+.two .p2 {
   color: hsl(216, 50%, 85%);
 }
-.div3 .under-name {
+.three .p2 {
   color: hsla(217, 30%, 14%, 0.568);
 }
-.div4 .under-name {
+.four .p2 {
   color: hsla(217, 30%, 14%, 0.568);
 }
-.div4 .under-name {
-  color: hsl(217, 19%, 35%);
-}
-.div5 .under-name {
+.five .p2 {
   color: rgba(255, 255, 255, 0.555);
 }
-.div2 .p2 {
-  color: hsl(216, 50%, 85%);
-}
-.div3 .p2 {
-  color: hsla(217, 30%, 14%, 0.568);
-}
-.div4 .p2 {
-  color: hsla(217, 30%, 14%, 0.568);
-}
-.div5 .p2 {
-  color: rgba(255, 255, 255, 0.555);
-}
-.div3 .p1 {
+.three .p1 {
   color: hsl(217, 19%, 35%);
 }
-.div4 .p1 {
+.four .p1 {
   color: hsl(217, 19%, 35%);
 }
 
-.div1 img {
+.one img {
   outline: 3px solid hsl(263, 82%, 69%);
 }
-.div5 img {
+.five img {
   outline: 3px solid hsl(263, 82%, 69%);
 }
 @media screen and (max-width: 750px) {
   .content {
     display: flex;
     flex-direction: column;
+    scale: 1;
   }
   body {
     padding: 25px;
   }
-  .div3 {
+  .three {
     width: unset;
   }
 }
